@@ -20,7 +20,7 @@ async function AdminChrome({ children }: { children: React.ReactNode }) {
           <div className="flex items-center gap-2">
             <span className="h-2 w-2 rounded-full bg-[#c25438]" />
             <p className="font-serif text-lg font-semibold tracking-wide text-[#faf6f0]">
-              Dar Zellige <span className="text-xs font-sans text-[#d99824] uppercase tracking-widest ml-1">Painel Staff</span>
+              Azul Caffé <span className="text-xs font-sans text-[#d99824] uppercase tracking-widest ml-1">& Brunch's Dz · Staff</span>
             </p>
           </div>
           <nav className="flex items-center gap-5 text-sm text-stone-300">

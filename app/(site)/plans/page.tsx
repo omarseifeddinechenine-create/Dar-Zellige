@@ -75,12 +75,12 @@ export default function PlansPage() {
   function getPlanContactUrl(planName: string) {
     const text = encodeURIComponent(
       lang === "pt"
-        ? `Olá! Gostaria de falar sobre a adesão ao plano ${planName} para o Dar Zellige Lisboa.`
+        ? `Olá! Gostaria de falar sobre a adesão ao plano ${planName} para o Azul Caffé & Brunch's Dz Lisboa.`
         : lang === "fr"
-        ? `Bonjour ! J'aimerais échanger au sujet de l'offre ${planName} pour Dar Zellige Lisbonne.`
+        ? `Bonjour ! J'aimerais échanger au sujet de l'offre ${planName} pour Azul Caffé & Brunch's Dz Lisbonne.`
         : lang === "ar"
-        ? `مرحباً! أود الاستفسار والاشتراك في باقة ${planName} لمطعم دار الزليج.`
-        : `Hello! I would like to discuss activating the ${planName} plan for Dar Zellige Lisbon.`
+        ? `مرحباً! أود الاستفسار والاشتراك في باقة ${planName} لأزول كافيه & برانش دزاد.`
+        : `Hello! I would like to discuss activating the ${planName} plan for Azul Caffé & Brunch's Dz Lisbon.`
     )
     return `${site.whatsappHref}?text=${text}`
   }

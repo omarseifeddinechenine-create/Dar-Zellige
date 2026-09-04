@@ -21,7 +21,7 @@ export function HomeView({ dishes }: { dishes: MenuDish[] }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="https://images.unsplash.com/photo-1541519227354-08fa9d633c18?auto=format&fit=crop&w=2000&q=80"
-          alt="Tajine Argelino Dar Zellige Lisboa"
+          alt="Brunch & Cozinha Argelina Azul Caffé & Brunch's Dz Lisboa"
           className="absolute inset-0 size-full object-cover"
         />
         {/* Warm Terracotta & Deep Charcoal Overlays */}
@@ -205,7 +205,7 @@ export function HomeView({ dishes }: { dishes: MenuDish[] }) {
               />
               <div className="absolute -bottom-4 -right-4 rounded-2xl bg-[#241711] p-4 text-white shadow-xl hidden sm:block">
                 <Zellige className="size-8 text-accent" />
-                <p className="mt-1 font-serif text-sm font-semibold">Dar Zellige</p>
+                <p className="mt-1 font-serif text-sm font-semibold">{site.name}</p>
                 <p className="text-[10px] text-white/60">Bairro Alto · Lisboa</p>
               </div>
             </div>

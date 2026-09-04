@@ -1,9 +1,9 @@
 import { cookies, headers } from "next/headers"
 import { NextResponse } from "next/server"
 
-export const ADMIN_COOKIE = "dar-zellige-admin"
-const DEFAULT_EMAIL = "staff@darzellige.pt"
-const DEFAULT_PASSWORD = "zellige2025"
+export const ADMIN_COOKIE = "azul-admin"
+const DEFAULT_EMAIL = "staff@azulcaffe.pt"
+const DEFAULT_PASSWORD = "azul2025"
 
 export function adminCredentials() {
   return {

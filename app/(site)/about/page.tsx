@@ -48,7 +48,7 @@ export default function AboutPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"
-              alt="Ambiente acolhedor Dar Zellige Lisboa"
+              alt="Ambiente acolhedor Azul Caffé & Brunch's Dz Lisboa"
               className="aspect-[4/5] rounded-3xl object-cover shadow-lg ring-1 ring-border"
             />
             <div className="absolute -bottom-5 -left-5 rounded-2xl bg-[#241711] p-5 text-white shadow-xl hidden sm:block">

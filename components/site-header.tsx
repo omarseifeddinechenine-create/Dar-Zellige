@@ -29,10 +29,12 @@ export function SiteHeader() {
           <Zellige className="size-8 text-accent shrink-0" />
           <div className="flex flex-col">
             <div className="flex items-baseline gap-2">
-              <span className="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-[#fdfbf7]">{site.name}</span>
-              <span className="font-serif text-xs text-accent hidden md:inline">{site.nameArabic}</span>
+              <span className="font-serif text-xl sm:text-2xl font-semibold tracking-wide text-[#fdfbf7]">
+                Azul Caffé <span className="text-xs font-sans text-accent tracking-normal font-normal">& Brunch's Dz</span>
+              </span>
+              <span className="font-serif text-xs text-accent hidden lg:inline">{site.nameArabic}</span>
             </div>
-            <span className="text-[10px] tracking-[0.2em] text-white/60 uppercase hidden sm:block">Lisboa · Bairro Alto</span>
+            <span className="text-[10px] tracking-[0.2em] text-white/60 uppercase hidden sm:block">Brunch & Cozinha Argelina · Lisboa</span>
           </div>
         </Link>
 

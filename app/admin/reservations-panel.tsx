@@ -63,7 +63,7 @@ export function ReservationsPanel() {
             {rows.map((r) => {
               const cleanPhone = r.phone.replace(/[^0-9]/g, "")
               const waMsg = encodeURIComponent(
-                `Olá ${r.name}! Confirmamos a sua reserva no Dar Zellige (Lisboa) para ${r.date} às ${r.time} (${r.partySize} pessoas). Estamos ansiosos por recebê-lo!`,
+                `Olá ${r.name}! Confirmamos a sua reserva no Azul Caffé & Brunch's Dz (Lisboa) para ${r.date} às ${r.time} (${r.partySize} pessoas). Estamos ansiosos por recebê-lo!`,
               )
               const waUrl = `https://wa.me/${cleanPhone}?text=${waMsg}`
 

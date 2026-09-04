@@ -18,34 +18,35 @@ const body = Outfit({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://darzellige.pt"),
+  metadataBase: new URL("https://azulcaffe.pt"),
   title: {
-    default: "Dar Zellige | Restaurante Argelino em Lisboa — Authentic Algerian Cuisine",
-    template: "%s | Dar Zellige Lisboa",
+    default: "Azul Caffé & Brunch's Dz | Restaurante & Brunch Argelino em Lisboa",
+    template: "%s | Azul Caffé & Brunch's Dz Lisboa",
   },
   description:
-    "Dar Zellige traz a autêntica gastronomia da Argélia para Lisboa. Couscous real no vapor, tajines aromáticos, mahjouba e doces tradicionais no coração do Bairro Alto. Reserve a sua mesa ou encomende via WhatsApp.",
+    "Azul Caffé & Brunch's Dz traz o autêntico brunch e gastronomia tradicional da Argélia para Lisboa. Couscous real no vapor, tajines aromáticos, mahjouba folhada, msemen artesanal e doçaria tradicional no coração do Bairro Alto. Reserve a sua mesa ou encomende via WhatsApp.",
   keywords: [
-    "Dar Zellige",
+    "Azul Caffé",
+    "Azul Caffe & Brunch's Dz",
+    "Brunch's Dz",
     "restaurante argelino Lisboa",
-    "Algerian restaurant Lisbon",
+    "Algerian brunch Lisbon",
+    "brunch halal Lisboa",
     "restaurant algérien Lisbonne",
-    "مطعم جزائري في لشبونة",
+    "أزول كافيه",
     "couscous Lisboa",
     "tajine Lisbon",
-    "halal food Lisbon",
-    "restaurante halal Lisboa",
     "mahjouba",
-    "rechta algéroise",
-    "Bairro Alto restaurant",
-    "North African cuisine Lisbon",
+    "msemen",
+    "Bairro Alto brunch",
+    "North African food Lisbon",
   ],
   openGraph: {
-    title: "Dar Zellige — Cozinha Tradicional Argelina em Lisboa",
-    description: "Couscous real no vapor de alfa, tajines de barro cozido, doces de amêndoa e mel e cerimonial de chá de hortelã no Bairro Alto.",
+    title: "Azul Caffé & Brunch's Dz — Brunch & Cozinha Argelina em Lisboa",
+    description: "Autêntico brunch argelino, couscous real no vapor de alfa, tajines de barro cozido, doces de amêndoa e mel e cerimonial de chá de hortelã no Bairro Alto.",
     locale: "pt_PT",
     type: "website",
-    url: "https://darzellige.pt",
+    url: "https://azulcaffe.pt",
   },
   alternates: { canonical: "/" },
   icons: {
@@ -66,8 +67,8 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
   name: site.name,
-  alternateName: "دار الزليج - مطعم جزائري",
-  servesCuisine: ["Algerian", "North African", "Halal"],
+  alternateName: "أزول كافيه & برانش دزاد",
+  servesCuisine: ["Algerian", "North African", "Halal", "Brunch"],
   priceRange: "€€",
   address: {
     "@type": "PostalAddress",
@@ -79,7 +80,7 @@ const jsonLd = {
   geo: { "@type": "GeoCoordinates", latitude: site.geo.lat, longitude: site.geo.lng },
   telephone: site.phone,
   email: site.email,
-  url: "https://darzellige.pt",
+  url: "https://azulcaffe.pt",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -101,7 +102,7 @@ const jsonLd = {
     },
   ],
   acceptsReservations: true,
-  hasMenu: "https://darzellige.pt/menu",
+  hasMenu: "https://azulcaffe.pt/menu",
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

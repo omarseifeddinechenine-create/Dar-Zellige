@@ -1,9 +1,10 @@
 export const site = {
-  name: "Dar Zellige",
-  nameArabic: "دار الزليج",
-  subtitle: "Restaurante Argelino Tradicional",
-  legalName: "Dar Zellige Lisboa, Lda.",
-  tagline: "Autêntica Cozinha Argelina no Coração de Lisboa",
+  name: "Azul Caffé & Brunch's Dz",
+  shortName: "Azul Caffé",
+  nameArabic: "أزول كافيه & برانش دزاد",
+  subtitle: "Brunch & Cozinha Tradicional Argelina",
+  legalName: "Azul Caffé & Brunch's Dz Lisboa, Lda.",
+  tagline: "Autêntico Brunch & Gastronomia Argelina no Coração de Lisboa",
   founded: 2024,
   address: {
     street: "Rua da Rosa 42",
@@ -26,20 +27,20 @@ export const site = {
   phoneHref: "tel:+351213468920",
   whatsapp: "+351 912 345 678",
   whatsappHref: "https://wa.me/351912345678",
-  email: "reservas@darzellige.pt",
-  emailHref: "mailto:reservas@darzellige.pt",
-  instagram: "https://instagram.com/darzellige.lisboa",
-  instagramHandle: "@darzellige.lisboa",
-  facebook: "https://facebook.com/darzellige.lisboa",
+  email: "reservas@azulcaffe.pt",
+  emailHref: "mailto:reservas@azulcaffe.pt",
+  instagram: "https://instagram.com/azulcaffe.lisboa",
+  instagramHandle: "@azulcaffe.lisboa",
+  facebook: "https://facebook.com/azulcaffe.lisboa",
   hours: {
     closedDay: 1, // Monday
     lunch: { open: "12:00", close: "15:30" },
     dinner: { open: "19:00", close: "23:30" },
     display: {
-      pt: "Terça a Domingo: Almoço 12h00–15h30 · Jantar 19h00–23h30 · Segunda Encerrado",
-      en: "Tuesday to Sunday: Lunch 12:00–15:30 · Dinner 19:00–23:30 · Closed Monday",
-      fr: "Mardi au Dimanche : Déjeuner 12h00–15h30 · Dîner 19h00–23h30 · Fermé le Lundi",
-      ar: "الثلاثاء إلى الأحد: الغداء 12:00–15:30 · العشاء 19:00–23:30 · مغلق يوم الاثنين",
+      pt: "Terça a Domingo: Brunch & Almoço 12h00–15h30 · Jantar 19h00–23h30 · Segunda Encerrado",
+      en: "Tuesday to Sunday: Brunch & Lunch 12:00–15:30 · Dinner 19:00–23:30 · Closed Monday",
+      fr: "Mardi au Dimanche : Brunch & Déjeuner 12h00–15h30 · Dîner 19h00–23h30 · Fermé le Lundi",
+      ar: "الثلاثاء إلى الأحد: برانش وغداء 12:00–15:30 · عشاء 19:00–23:30 · مغلق يوم الاثنين",
     },
   },
   slots: [
@@ -68,20 +69,20 @@ export type SiteLang = "pt" | "en" | "fr" | "ar"
 
 export function whatsappReserveUrl(lang: SiteLang) {
   const messages: Record<SiteLang, string> = {
-    pt: "Olá! Gostaria de reservar uma mesa no Dar Zellige Lisboa.",
-    en: "Hello! I would like to reserve a table at Dar Zellige Lisbon.",
-    fr: "Bonjour ! Je souhaiterais réserver une table chez Dar Zellige Lisbonne.",
-    ar: "مرحباً! أود حجز طاولة في مطعم دار الزليج لشبونة.",
+    pt: "Olá! Gostaria de reservar uma mesa no Azul Caffé & Brunch's Dz Lisboa.",
+    en: "Hello! I would like to reserve a table at Azul Caffé & Brunch's Dz Lisbon.",
+    fr: "Bonjour ! Je souhaiterais réserver une table chez Azul Caffé & Brunch's Dz Lisbonne.",
+    ar: "مرحباً! أود حجز طاولة في أزول كافيه & برانش دزاد لشبونة.",
   }
   return `${site.whatsappHref}?text=${encodeURIComponent(messages[lang] || messages.pt)}`
 }
 
 export function whatsappOrderUrl(lang: SiteLang) {
   const messages: Record<SiteLang, string> = {
-    pt: "Olá! Gostaria de fazer um pedido de take-away / entrega no Dar Zellige.",
-    en: "Hello! I would like to place a take-away / delivery order at Dar Zellige.",
-    fr: "Bonjour ! J'aimerais passer une commande à emporter / livraison chez Dar Zellige.",
-    ar: "مرحباً! أود طلب وجبة سفري / توصيل من دار الزليج.",
+    pt: "Olá! Gostaria de fazer um pedido de take-away / entrega no Azul Caffé & Brunch's Dz.",
+    en: "Hello! I would like to place a take-away / delivery order at Azul Caffé & Brunch's Dz.",
+    fr: "Bonjour ! J'aimerais passer une commande à emporter / livraison chez Azul Caffé & Brunch's Dz.",
+    ar: "مرحباً! أود طلب وجبة سفري / توصيل من أزول كافيه & برانش دزاد.",
   }
   return `${site.whatsappHref}?text=${encodeURIComponent(messages[lang] || messages.pt)}`
 }

@@ -104,12 +104,12 @@ export function ReservationForm() {
   if (status === "success" && confirmedData) {
     const waShareText = encodeURIComponent(
       lang === "pt"
-        ? `Olá Dar Zellige! Confirmo a minha reserva (Ref: ${confirmedData.code}) para ${confirmedData.name}, ${confirmedData.partySize} pessoas no dia ${confirmedData.date} às ${confirmedData.time}.`
+        ? `Olá Azul Caffé & Brunch's Dz! Confirmo a minha reserva (Ref: ${confirmedData.code}) para ${confirmedData.name}, ${confirmedData.partySize} pessoas no dia ${confirmedData.date} às ${confirmedData.time}.`
         : lang === "fr"
-        ? `Bonjour Dar Zellige ! Je confirme ma réservation (Réf: ${confirmedData.code}) au nom de ${confirmedData.name}, pour ${confirmedData.partySize} personnes le ${confirmedData.date} à ${confirmedData.time}.`
+        ? `Bonjour Azul Caffé & Brunch's Dz ! Je confirme ma réservation (Réf: ${confirmedData.code}) au nom de ${confirmedData.name}, pour ${confirmedData.partySize} personnes le ${confirmedData.date} à ${confirmedData.time}.`
         : lang === "ar"
-        ? `مرحباً دار الزليج! أؤكد حجزي (رقم المرجع: ${confirmedData.code}) باسم ${confirmedData.name} لعدد ${confirmedData.partySize} أشخاص يوم ${confirmedData.date} الساعة ${confirmedData.time}.`
-        : `Hello Dar Zellige! Confirming my reservation (Ref: ${confirmedData.code}) for ${confirmedData.name}, ${confirmedData.partySize} guests on ${confirmedData.date} at ${confirmedData.time}.`
+        ? `مرحباً أزول كافيه & برانش دزاد! أؤكد حجزي (رقم المرجع: ${confirmedData.code}) باسم ${confirmedData.name} لعدد ${confirmedData.partySize} أشخاص يوم ${confirmedData.date} الساعة ${confirmedData.time}.`
+        : `Hello Azul Caffé & Brunch's Dz! Confirming my reservation (Ref: ${confirmedData.code}) for ${confirmedData.name}, ${confirmedData.partySize} guests on ${confirmedData.date} at ${confirmedData.time}.`
     )
     const waUrl = `${site.whatsappHref}?text=${waShareText}`
 

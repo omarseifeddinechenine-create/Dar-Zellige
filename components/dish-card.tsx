@@ -43,12 +43,12 @@ export function DishCard({ dish, featured = false }: { dish: MenuDish; featured?
 
   const orderMessage = encodeURIComponent(
     lang === "pt"
-      ? `Olá! Gostaria de encomendar ${name} no Dar Zellige.`
+      ? `Olá! Gostaria de encomendar ${name} no Azul Caffé & Brunch's Dz.`
       : lang === "fr"
-      ? `Bonjour ! Je souhaiterais commander ${name} chez Dar Zellige.`
+      ? `Bonjour ! Je souhaiterais commander ${name} chez Azul Caffé & Brunch's Dz.`
       : lang === "ar"
-      ? `مرحباً! أود طلب طبق ${name} من مطعم دار الزليج.`
-      : `Hello! I would like to order ${name} from Dar Zellige.`
+      ? `مرحباً! أود طلب طبق ${name} من أزول كافيه & برانش دزاد.`
+      : `Hello! I would like to order ${name} from Azul Caffé & Brunch's Dz.`
   )
   const orderUrl = `${site.whatsappHref}?text=${orderMessage}`
 
@@ -111,12 +111,12 @@ export function DishRow({ dish }: { dish: MenuDish }) {
 
   const orderMessage = encodeURIComponent(
     lang === "pt"
-      ? `Olá! Gostaria de encomendar ${name} no Dar Zellige.`
+      ? `Olá! Gostaria de encomendar ${name} no Azul Caffé & Brunch's Dz.`
       : lang === "fr"
-      ? `Bonjour ! Je souhaiterais commander ${name} chez Dar Zellige.`
+      ? `Bonjour ! Je souhaiterais commander ${name} chez Azul Caffé & Brunch's Dz.`
       : lang === "ar"
-      ? `مرحباً! أود طلب طبق ${name} من مطعم دار الزليج.`
-      : `Hello! I would like to order ${name} from Dar Zellige.`
+      ? `مرحباً! أود طلب طبق ${name} من أزول كافيه & برانش دزاد.`
+      : `Hello! I would like to order ${name} from Azul Caffé & Brunch's Dz.`
   )
   const orderUrl = `${site.whatsappHref}?text=${orderMessage}`
 

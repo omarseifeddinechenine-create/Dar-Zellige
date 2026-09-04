@@ -34,7 +34,7 @@ export function LoginForm() {
     <form onSubmit={onSubmit} className="w-full max-w-sm rounded-3xl bg-white p-8 shadow-xl border border-stone-200">
       <div className="flex items-center gap-2 mb-1">
         <span className="h-2 w-2 rounded-full bg-[#c25438]" />
-        <p className="text-xs font-semibold tracking-[0.2em] text-[#c25438] uppercase">Dar Zellige</p>
+        <p className="text-xs font-semibold tracking-[0.2em] text-[#c25438] uppercase">Azul Caffé & Brunch's Dz</p>
       </div>
       <h1 className="mt-1 font-serif text-3xl font-bold text-stone-900">Área da equipa</h1>
       <p className="mt-1 text-xs text-stone-500">Gestão simplificada de menu, reservas e pratos esgotados.</p>
@@ -44,7 +44,7 @@ export function LoginForm() {
           name="email"
           type="email"
           required
-          defaultValue="staff@darzellige.pt"
+          defaultValue="staff@azulcaffe.pt"
           className="mt-1 w-full rounded-xl border border-stone-200 px-3 py-2.5 text-sm focus:border-[#c25438] outline-none"
         />
       </label>
@@ -68,7 +68,7 @@ export function LoginForm() {
       </button>
       <p className="mt-4 text-center text-[11px] text-stone-400">
         Credenciais padrão de demonstração: <br />
-        <span className="text-stone-600 font-mono">staff@darzellige.pt</span> / <span className="text-stone-600 font-mono">zellige2025</span>
+        <span className="text-stone-600 font-mono">staff@azulcaffe.pt</span> / <span className="text-stone-600 font-mono">azul2025</span>
       </p>
     </form>
   )
