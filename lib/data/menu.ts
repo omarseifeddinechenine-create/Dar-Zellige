@@ -21,18 +21,25 @@ export type MenuDish = {
 }
 
 const img = {
+  // ── Real Azul Caffé & Brunch's Dz photos (Google Maps export) ──
+  grillPlate: "/gmaps/photo_00.jpeg",    // grilled chicken skewers, rice, fresh salad
+  terrace: "/gmaps/photo_01.jpeg",       // outdoor terrace with Azul menu on table
+  interiorWall: "/gmaps/photo_02.jpeg",  // interior tropical wallpaper feature wall
+  drink: "/gmaps/photo_03.jpeg",         // fancy chilled drink with straw on terrace
+  displayFridge: "/gmaps/photo_04.jpeg", // pastry & drinks display fridge
+  interiorRoom: "/gmaps/photo_05.jpeg",  // inside the main dining room
+  exterior1: "/gmaps/photo_06.jpeg",     // restaurant exterior / street view
+  exterior2: "/gmaps/photo_07.jpeg",     // restaurant exterior (slightly different angle)
+  sandwich1: "/gmaps/photo_08.jpeg",     // galette / sandwich being assembled
+  sandwich2: "/gmaps/photo_09.jpeg",     // galette / sandwich plated and served
+
+  // ── Unsplash fallbacks for dishes without a real photo yet ──
   couscous: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80",
   tajine: "https://images.unsplash.com/photo-1541519227354-08fa9d633c18?auto=format&fit=crop&w=1200&q=80",
   tajineLamb: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-  mahjouba: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=80",
-  shakshuka: "https://images.unsplash.com/photo-1590412200988-a436970781fa?auto=format&fit=crop&w=1200&q=80",
-  brik: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80",
-  salad: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
-  soup: "https://images.unsplash.com/photo-1547592166-23ac45744acd?auto=format&fit=crop&w=1200&q=80",
   makroud: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
   baghrir: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&q=80",
   tea: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80",
-  lemonade: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
   coffee: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
 }
 
@@ -121,7 +128,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Crêpe feuilletée de semoule pliée en carré, farcie minute à la compotée de tomate, oignons fondants, coriandre et pointe de harissa.",
     descAr: "فطيرة سميد مورقة ومقرمشة محشوة بتكتوكة الطماطم والبصل المكرمل والكزبرة ولمسة هريسة حارة.",
     price: "8.50",
-    imageUrl: img.mahjouba,
+    imageUrl: img.sandwich1,
     isSignature: true,
     sortOrder: 5,
     available: true,
@@ -139,7 +146,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Mijoté de poivrons doux et tomates mûres, ail confit, cumin et œufs bio pochés au cœur. Servi avec pain chaud du jour.",
     descAr: "شكشوكة الفلفل الحلو والطماطم المتبلة بالكمون والثوم مع بيض بلدي عيون، تقدم مع الخبز الطازج.",
     price: "11.50",
-    imageUrl: img.shakshuka,
+    imageUrl: img.grillPlate,
     isSignature: false,
     sortOrder: 6,
     available: true,
@@ -157,7 +164,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Feuille de dioul croustillante farcie d'un œuf coulant, thon blanc, câpres, persil plat et trait de citron frais.",
     descAr: "ورقة ديول مقرمشة ومذهبة محشوة ببيضة طرية، تونة فاخرة، كبار وبقدونس طازج مع رشة ليمون.",
     price: "7.90",
-    imageUrl: img.brik,
+    imageUrl: img.sandwich2,
     isSignature: false,
     sortOrder: 7,
     available: true,
@@ -175,7 +182,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Soupe ancestrale au blé vert concassé (frik), émincé d'agneau, pois chiches, coriandre fraîche et pincée de menthe séchée.",
     descAr: "حساء الفريك الأخضر المدخن المحبوب في الجزائر مع لحم الخروف، الحمص، الكزبرة والنعناع العطري.",
     price: "8.50",
-    imageUrl: img.soup,
+    imageUrl: img.terrace,
     isSignature: false,
     sortOrder: 8,
     available: true,
@@ -193,7 +200,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Poivrons et tomates grillés au feu de bois, pilés à l'ail nouveau, huile d'olive vierge extra et olives noires séchées.",
     descAr: "فلفل وطماطم مشوية على الجمر، مهروسة بالثوم، زيت الزيتون البكر الممتاز والزيتون الأسود.",
     price: "8.90",
-    imageUrl: img.salad,
+    imageUrl: img.grillPlate,
     isSignature: false,
     sortOrder: 9,
     available: true,
@@ -211,7 +218,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Trois merguez artisanales bœuf et agneau grillées à la braise, houmous velouté et harissa maison fraîche.",
     descAr: "ثلاث حبات مرقاز بلدي من اللحم البقري والضأن مشوية على الفحم مع حمص كريمي وهريسة منزلية.",
     price: "15.90",
-    imageUrl: img.tajine,
+    imageUrl: img.grillPlate,
     isSignature: false,
     sortOrder: 10,
     available: true,
@@ -301,7 +308,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Limonade artisanale culte de Blida : citrons frais pressés, pointe de lait, menthe pilée et eau de fleur d'oranger givrée.",
     descAr: "عصير الليمون المنعش الشهير من البليدة وبوفاريك مع لمسة حليب، ماء الزهر والنعناع المثلج.",
     price: "4.20",
-    imageUrl: img.lemonade,
+    imageUrl: img.drink,
     isSignature: false,
     sortOrder: 15,
     available: true,
@@ -329,46 +336,47 @@ export const MENU_SEED: MenuDish[] = [
 
 export const GALLERY = [
   {
-    src: "https://images.unsplash.com/photo-1541519227354-08fa9d633c18?auto=format&fit=crop&w=1400&q=80",
-    alt: "Tajine de frango e azeitonas douradas",
+    src: "/gmaps/photo_00.jpeg",
+    alt: "Prato de grelhados, arroz e salada fresca — Azul Caffé & Brunch's Dz",
     kind: "dish" as const,
   },
   {
-    src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80",
-    alt: "Interior acolhedor do restaurante com azulejos e luz quente",
+    src: "/gmaps/photo_06.jpeg",
+    alt: "Fachada do Azul Caffé & Brunch's Dz com esplanada",
     kind: "interior" as const,
   },
   {
-    src: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1400&q=80",
-    alt: "Couscous Royal Argelino fumegante",
-    kind: "dish" as const,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1400&q=80",
-    alt: "Serviço tradicional de chá de menta argelino",
-    kind: "dish" as const,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80",
-    alt: "Convívio familiar e de amigos à mesa",
-    kind: "event" as const,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1400&q=80",
-    alt: "Mahjouba acabada de dobrar na chapa",
-    kind: "dish" as const,
-  },
-  {
-    src: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=1400&q=80",
-    alt: "Mesa posta no pátio com iluminação intimista",
+    src: "/gmaps/photo_05.jpeg",
+    alt: "Sala interior do Azul Caffé & Brunch's Dz",
     kind: "interior" as const,
   },
   {
-    src: "https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?auto=format&fit=crop&w=1400&q=80",
-    alt: "Jantar sob luz suave no Bairro Alto",
+    src: "/gmaps/photo_03.jpeg",
+    alt: "Bebida artesanal gelada na esplanada do Azul Caffé",
+    kind: "dish" as const,
+  },
+  {
+    src: "/gmaps/photo_08.jpeg",
+    alt: "Preparação de galette / sanduíche artesanal",
+    kind: "dish" as const,
+  },
+  {
+    src: "/gmaps/photo_02.jpeg",
+    alt: "Parede decorativa interior com papel de parede tropical",
+    kind: "interior" as const,
+  },
+  {
+    src: "/gmaps/photo_01.jpeg",
+    alt: "Esplanada do Azul Caffé com menu sobre a mesa",
     kind: "event" as const,
+  },
+  {
+    src: "/gmaps/photo_07.jpeg",
+    alt: "Exterior do restaurante Azul Caffé & Brunch's Dz — vista da rua",
+    kind: "interior" as const,
   },
 ]
+
 
 export const CATEGORY_ORDER: MenuCategory[] = ["signatures", "mains", "starters", "sweet", "drinks"]
 

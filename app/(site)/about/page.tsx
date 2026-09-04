@@ -47,7 +47,7 @@ export default function AboutPage() {
           <div className="relative">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
-              src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1400&q=80"
+              src="/gmaps/photo_02.jpeg"
               alt="Ambiente acolhedor Azul Caffé & Brunch's Dz Lisboa"
               className="aspect-[4/5] rounded-3xl object-cover shadow-lg ring-1 ring-border"
             />

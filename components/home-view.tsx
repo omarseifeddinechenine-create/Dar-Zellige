@@ -20,8 +20,8 @@ export function HomeView({ dishes }: { dishes: MenuDish[] }) {
         {/* Background Food & Ambiance Photo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1541519227354-08fa9d633c18?auto=format&fit=crop&w=2000&q=80"
-          alt="Brunch & Cozinha Argelina Azul Caffé & Brunch's Dz Lisboa"
+          src="/gmaps/photo_06.jpeg"
+          alt="Azul Caffé & Brunch's Dz — Restaurante em Lisboa"
           className="absolute inset-0 size-full object-cover"
         />
         {/* Warm Terracotta & Deep Charcoal Overlays */}
@@ -198,8 +198,8 @@ export function HomeView({ dishes }: { dishes: MenuDish[] }) {
             <div className="relative">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=1400&q=80"
-                alt="Hospitalidade Argelina em Lisboa"
+                src="/gmaps/photo_05.jpeg"
+                alt="Interior acolhedor do Azul Caffé & Brunch's Dz"
                 className="aspect-[4/5] w-full rounded-3xl object-cover shadow-md"
                 loading="lazy"
               />
