@@ -1,21 +1,27 @@
 import { NextResponse } from "next/server"
-import { MENU_SEED, parseTags, type MenuDish } from "@/lib/data/menu"
+import { revalidatePath } from "next/cache"
+import { parseTags, type MenuDish } from "@/lib/data/menu"
+import { getMenu, writeLocalMenu } from "@/lib/menu"
 import { isAdmin, unauthorized } from "@/lib/admin"
-
-let memory: MenuDish[] = MENU_SEED.map((d) => ({ ...d }))
 
 function serialize(d: MenuDish) {
   return { ...d, tags: d.tags.join(",") }
 }
 
 export async function GET() {
-  if (!process.env.DATABASE_URL) return NextResponse.json(memory)
+  if (!process.env.DATABASE_URL) {
+    const dishes = await getMenu()
+    return NextResponse.json(dishes)
+  }
   try {
     const { db } = await import("@/lib/db")
     const { menuItems } = await import("@/lib/db/schema")
     const { asc } = await import("drizzle-orm")
     const rows = await db.select().from(menuItems).orderBy(asc(menuItems.sortOrder))
-    if (!rows.length) return NextResponse.json(memory)
+    if (!rows.length) {
+      const dishes = await getMenu()
+      return NextResponse.json(dishes)
+    }
     return NextResponse.json(
       rows.map((row) => ({
         ...row,
@@ -24,7 +30,8 @@ export async function GET() {
       })),
     )
   } catch {
-    return NextResponse.json(memory)
+    const dishes = await getMenu()
+    return NextResponse.json(dishes)
   }
 }
 
@@ -51,7 +58,12 @@ export async function POST(req: Request) {
   }
 
   if (!process.env.DATABASE_URL) {
-    memory.push(dish)
+    const current = await getMenu()
+    const updated = [...current, dish]
+    writeLocalMenu(updated)
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json(serialize(dish))
   }
 
@@ -78,9 +90,17 @@ export async function POST(req: Request) {
         tags: dish.tags.join(","),
       })
       .returning()
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json(row)
   } catch {
-    memory.push(dish)
+    const current = await getMenu()
+    const updated = [...current, dish]
+    writeLocalMenu(updated)
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json(serialize(dish))
   }
 }
@@ -92,7 +112,8 @@ export async function PATCH(req: Request) {
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 })
 
   if (!process.env.DATABASE_URL) {
-    memory = memory.map((d) => {
+    const current = await getMenu()
+    const updated = current.map((d) => {
       if (d.id !== id) return d
       return {
         ...d,
@@ -100,6 +121,10 @@ export async function PATCH(req: Request) {
         tags: body.tags ? parseTags(Array.isArray(body.tags) ? body.tags.join(",") : body.tags) : d.tags,
       }
     })
+    writeLocalMenu(updated)
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json({ ok: true })
   }
 
@@ -130,9 +155,13 @@ export async function PATCH(req: Request) {
       patch.tags = Array.isArray(body.tags) ? body.tags.join(",") : body.tags
     }
     await db.update(menuItems).set(patch).where(eq(menuItems.id, id))
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json({ ok: true })
   } catch {
-    memory = memory.map((d) => {
+    const current = await getMenu()
+    const updated = current.map((d) => {
       if (d.id !== id) return d
       return {
         ...d,
@@ -140,6 +169,10 @@ export async function PATCH(req: Request) {
         tags: body.tags ? parseTags(Array.isArray(body.tags) ? body.tags.join(",") : body.tags) : d.tags,
       }
     })
+    writeLocalMenu(updated)
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json({ ok: true })
   }
 }
@@ -152,7 +185,12 @@ export async function DELETE(req: Request) {
   if (!id) return NextResponse.json({ error: "id required" }, { status: 400 })
 
   if (!process.env.DATABASE_URL) {
-    memory = memory.filter((d) => d.id !== id)
+    const current = await getMenu()
+    const updated = current.filter((d) => d.id !== id)
+    writeLocalMenu(updated)
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json({ ok: true })
   }
 
@@ -161,9 +199,17 @@ export async function DELETE(req: Request) {
     const { menuItems } = await import("@/lib/db/schema")
     const { eq } = await import("drizzle-orm")
     await db.delete(menuItems).where(eq(menuItems.id, id))
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json({ ok: true })
   } catch {
-    memory = memory.filter((d) => d.id !== id)
+    const current = await getMenu()
+    const updated = current.filter((d) => d.id !== id)
+    writeLocalMenu(updated)
+    revalidatePath("/")
+    revalidatePath("/menu")
+    revalidatePath("/gallery")
     return NextResponse.json({ ok: true })
   }
 }

@@ -26,6 +26,7 @@ async function AdminChrome({ children }: { children: React.ReactNode }) {
           <nav className="flex items-center gap-5 text-sm text-stone-300">
             <Link href="/admin" className="hover:text-[#d99824] transition-colors">Reservas</Link>
             <Link href="/admin/menu" className="hover:text-[#d99824] transition-colors">Menu</Link>
+            <Link href="/admin/images" className="hover:text-[#d99824] transition-colors">Imagens</Link>
             <Link href="/plans" className="text-xs bg-[#c25438]/20 text-[#c25438] px-2 py-0.5 rounded border border-[#c25438]/40 hover:bg-[#c25438] hover:text-white transition-colors">Planos</Link>
             <Link href="/" className="hover:text-white transition-colors">Ver Site</Link>
             <form

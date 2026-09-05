@@ -21,9 +21,19 @@ export type MenuDish = {
 }
 
 const img = {
+  // ── Real Azul Caffé & Brunch's Dz — Instagram photos (@azul_cafe_and_brunch) ──
+  chickenTajine: "/instagram/chicken-tajine.jpg",       // roasted chicken with vegetables in broth
+  algerianSweets: "/instagram/algerian-sweets.jpg",     // makroudh / kaab ghzal tray
+  waffleFruits: "/instagram/waffle-fruits.jpg",         // Belgian waffle with fruit & chocolate
+  teapotMint: "/instagram/teapot-mint.jpg",             // traditional silver teapot & lantern
+  spagBolognese: "/instagram/spaghetti-bolognese.jpg",  // spaghetti bolognese (Azul-branded)
+  icedMocha: "/instagram/iced-mocha.jpg",               // iced mocha / coffee float drink
+  terraceSide: "/instagram/terrace.jpg",                // outdoor terrace with Azul chairs
+  brunchFlyer: "/instagram/brunch-flyer.jpg",           // Azul brunch poster / flyer
+
   // ── Real Azul Caffé & Brunch's Dz photos (Google Maps export) ──
   grillPlate: "/gmaps/photo_00.jpeg",    // grilled chicken skewers, rice, fresh salad
-  terrace: "/gmaps/photo_01.jpeg",       // outdoor terrace with Azul menu on table
+  terraceGmaps: "/gmaps/photo_01.jpeg",  // outdoor terrace with Azul menu on table
   interiorWall: "/gmaps/photo_02.jpeg",  // interior tropical wallpaper feature wall
   drink: "/gmaps/photo_03.jpeg",         // fancy chilled drink with straw on terrace
   displayFridge: "/gmaps/photo_04.jpeg", // pastry & drinks display fridge
@@ -32,15 +42,6 @@ const img = {
   exterior2: "/gmaps/photo_07.jpeg",     // restaurant exterior (slightly different angle)
   sandwich1: "/gmaps/photo_08.jpeg",     // galette / sandwich being assembled
   sandwich2: "/gmaps/photo_09.jpeg",     // galette / sandwich plated and served
-
-  // ── Unsplash fallbacks for dishes without a real photo yet ──
-  couscous: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80",
-  tajine: "https://images.unsplash.com/photo-1541519227354-08fa9d633c18?auto=format&fit=crop&w=1200&q=80",
-  tajineLamb: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
-  makroud: "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=1200&q=80",
-  baghrir: "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=1200&q=80",
-  tea: "https://images.unsplash.com/photo-1576092768241-dec231879fc3?auto=format&fit=crop&w=1200&q=80",
-  coffee: "https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=1200&q=80",
 }
 
 export const MENU_SEED: MenuDish[] = [
@@ -56,7 +57,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Semoule fine roulée main à la vapeur, agneau fondant, poulet fermier, merguez artisanale et 7 légumes du marché au bouillon parfumé.",
     descAr: "سميد رقيق مبخر على اليد، لحم خروف طري، دجاج محمر، مرقاز تقليدي وسبع خضار في مرق الزعفران والقرفة العطرية.",
     price: "19.50",
-    imageUrl: img.couscous,
+    imageUrl: img.chickenTajine,
     isSignature: true,
     sortOrder: 1,
     available: true,
@@ -74,7 +75,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Poulet mijoté doucement aux olives vertes, champignons frais, citron confit et sauce dorée au curcuma et laurier.",
     descAr: "دجاج متبل ومطهو على نار هادئة مع الزيتون الأخضر، الفطر الطازج، الليمون المصبر ومرق ذهبي بالزعفران.",
     price: "17.90",
-    imageUrl: img.tajine,
+    imageUrl: img.chickenTajine,
     isSignature: true,
     sortOrder: 2,
     available: true,
@@ -92,7 +93,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Plat princier des fêtes algériennes : agneau caramélisé aux pruneaux, abricots dorés, amandes grillées et eau de fleur d'oranger.",
     descAr: "طبق الأعراس والمناسبات الكبرى: لحم طري معسل بالبرقوق، المشمش المجفف، اللوز المحمص ونفحات ماء الزهر.",
     price: "18.50",
-    imageUrl: img.tajineLamb,
+    imageUrl: img.chickenTajine,
     isSignature: true,
     sortOrder: 3,
     available: true,
@@ -110,7 +111,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Pâtes fraîches artisanales algéroises cuites à la vapeur, poulet tendre, navets fondants, pois chiches et sauce blanche à la cannelle.",
     descAr: "معكرونة تقليدية رقيقة مبخرة على البخار، دجاج طري، لفت أبيض، حمص ومرق أبيض فاخر بالقرفة.",
     price: "16.80",
-    imageUrl: img.couscous,
+    imageUrl: img.spagBolognese,
     isSignature: true,
     sortOrder: 4,
     available: true,
@@ -182,7 +183,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Soupe ancestrale au blé vert concassé (frik), émincé d'agneau, pois chiches, coriandre fraîche et pincée de menthe séchée.",
     descAr: "حساء الفريك الأخضر المدخن المحبوب في الجزائر مع لحم الخروف، الحمص، الكزبرة والنعناع العطري.",
     price: "8.50",
-    imageUrl: img.terrace,
+    imageUrl: img.terraceGmaps,
     isSignature: false,
     sortOrder: 8,
     available: true,
@@ -236,7 +237,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Losange de semoule fine dorée au four, cœur fondant de pâte de dattes Medjool à la cannelle, glacé au miel tiède.",
     descAr: "مقروض السميد الفاخر المحشو بعجينة تمر المجهول والقرفة، معسل بعسل الزهور الطبيعي.",
     price: "4.50",
-    imageUrl: img.makroud,
+    imageUrl: img.algerianSweets,
     isSignature: true,
     sortOrder: 11,
     available: true,
@@ -254,7 +255,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Gâteau mythique de semoule dorée et amandes effilées, imbibé d'un généreux sirop à l'eau de fleur d'oranger.",
     descAr: "حلوى قلب اللوز التقليدية الشهية بالسميد واللوز المحمص والمشربة بسيروب ماء الزهر الفواح.",
     price: "4.90",
-    imageUrl: img.makroud,
+    imageUrl: img.algerianSweets,
     isSignature: true,
     sortOrder: 12,
     available: true,
@@ -272,7 +273,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Trois crêpes mille trous légères et alvéolées, nappées minute de beurre fermier fondu et miel d'oranger.",
     descAr: "ثلاث حبات بغرير خفيف كالشهد، مسقى بالزبدة الذائبة وعسل زهر البرتقال.",
     price: "6.90",
-    imageUrl: img.baghrir,
+    imageUrl: img.waffleFruits,
     isSignature: false,
     sortOrder: 13,
     available: true,
@@ -290,7 +291,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Thé vert Gunpowder infusé de menthe fraîche cueillie du jour, versé bien haut pour libérer sa mousse dorée en théière argentée.",
     descAr: "شاي أخضر بالنعناع الطازج محضر على الأصول، يسكب عالياً في كؤوس تقليدية مزينة مع رغوته الشهيرة.",
     price: "3.50",
-    imageUrl: img.tea,
+    imageUrl: img.teapotMint,
     isSignature: true,
     sortOrder: 14,
     available: true,
@@ -308,7 +309,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Limonade artisanale culte de Blida : citrons frais pressés, pointe de lait, menthe pilée et eau de fleur d'oranger givrée.",
     descAr: "عصير الليمون المنعش الشهير من البليدة وبوفاريك مع لمسة حليب، ماء الزهر والنعناع المثلج.",
     price: "4.20",
-    imageUrl: img.drink,
+    imageUrl: img.icedMocha,
     isSignature: false,
     sortOrder: 15,
     available: true,
@@ -326,7 +327,7 @@ export const MENU_SEED: MenuDish[] = [
     descFr: "Café serré torréfié à l'ancienne, infusé aux graines de cardamome verte concassées et goutte de fleur d'oranger.",
     descAr: "قهوة عربية غنية مطبوخة على مهل بحبوب الهيل الأخضر وقطرات ماء الزهر الأصيل.",
     price: "2.80",
-    imageUrl: img.coffee,
+    imageUrl: img.icedMocha,
     isSignature: false,
     sortOrder: 16,
     available: true,
@@ -335,6 +336,48 @@ export const MENU_SEED: MenuDish[] = [
 ]
 
 export const GALLERY = [
+  // ── Instagram photos (@azul_cafe_and_brunch) ──
+  {
+    src: "/instagram/chicken-tajine.jpg",
+    alt: "Frango assado com legumes em caldo aromático — Azul Caffé & Brunch's Dz",
+    kind: "dish" as const,
+  },
+  {
+    src: "/instagram/algerian-sweets.jpg",
+    alt: "Doces argelinos tradicionais — makroudh e kaab ghzal artesanais",
+    kind: "dish" as const,
+  },
+  {
+    src: "/instagram/waffle-fruits.jpg",
+    alt: "Waffle belga com frutas frescas, chocolate e chantilly — Azul Caffé",
+    kind: "dish" as const,
+  },
+  {
+    src: "/instagram/teapot-mint.jpg",
+    alt: "Bule de prata tradicional com chá de hortelã e lanterna dourada",
+    kind: "dish" as const,
+  },
+  {
+    src: "/instagram/spaghetti-bolognese.jpg",
+    alt: "Esparguete à bolonhesa com manjericão fresco — Azul Caffé & Brunch's Dz",
+    kind: "dish" as const,
+  },
+  {
+    src: "/instagram/iced-mocha.jpg",
+    alt: "Mocaccino gelado com caramelo e chantilly — Azul Caffé & Brunch's Dz",
+    kind: "dish" as const,
+  },
+  {
+    src: "/instagram/terrace.jpg",
+    alt: "Esplanada exterior do Azul Caffé & Brunch's Dz com cadeiras riscadas",
+    kind: "interior" as const,
+  },
+  {
+    src: "/instagram/brunch-flyer.jpg",
+    alt: "Brunch todos os dias — cartaz Azul Caffé & Brunch's Dz Since 2025",
+    kind: "event" as const,
+  },
+  // ── Google Maps photos ──
   {
     src: "/gmaps/photo_00.jpeg",
     alt: "Prato de grelhados, arroz e salada fresca — Azul Caffé & Brunch's Dz",
@@ -349,11 +392,6 @@ export const GALLERY = [
     src: "/gmaps/photo_05.jpeg",
     alt: "Sala interior do Azul Caffé & Brunch's Dz",
     kind: "interior" as const,
-  },
-  {
-    src: "/gmaps/photo_03.jpeg",
-    alt: "Bebida artesanal gelada na esplanada do Azul Caffé",
-    kind: "dish" as const,
   },
   {
     src: "/gmaps/photo_08.jpeg",
@@ -376,6 +414,7 @@ export const GALLERY = [
     kind: "interior" as const,
   },
 ]
+
 
 
 export const CATEGORY_ORDER: MenuCategory[] = ["signatures", "mains", "starters", "sweet", "drinks"]

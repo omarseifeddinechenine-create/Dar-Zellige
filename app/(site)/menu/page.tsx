@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Algerian menu in Lisbon: mahjouba, msemen, tagines, couscous, mint tea. Halal, vegetarian and spicy tags.",
 }
 
+export const dynamic = "force-dynamic"
+
 export default async function MenuPage() {
   const dishes = await getMenu()
   return <MenuView dishes={dishes} />

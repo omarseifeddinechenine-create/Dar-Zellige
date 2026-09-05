@@ -9,7 +9,7 @@ import { GALLERY, type MenuDish } from "@/lib/data/menu"
 import { site, whatsappOrderUrl, whatsappReserveUrl } from "@/lib/data/site"
 import { useLanguage } from "@/lib/i18n/language-provider"
 
-export function HomeView({ dishes }: { dishes: MenuDish[] }) {
+export function HomeView({ dishes, heroImage = "/gmaps/photo_06.jpeg" }: { dishes: MenuDish[]; heroImage?: string }) {
   const { t, lang } = useLanguage()
   const signatures = dishes.filter((d) => d.isSignature && d.available).slice(0, 4)
 
@@ -20,7 +20,7 @@ export function HomeView({ dishes }: { dishes: MenuDish[] }) {
         {/* Background Food & Ambiance Photo */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/gmaps/photo_06.jpeg"
+          src={heroImage}
           alt="Azul Caffé & Brunch's Dz — Restaurante em Lisboa"
           className="absolute inset-0 size-full object-cover"
         />

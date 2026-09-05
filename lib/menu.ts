@@ -1,5 +1,36 @@
+import fs from "fs"
+import path from "path"
 import { MENU_SEED, parseTags, type MenuDish } from "@/lib/data/menu"
 import type { MenuItem } from "@/lib/db/schema"
+
+const MENU_FILE = path.join(process.cwd(), "lib", "data", "menu.json")
+
+export function readLocalMenu(): MenuDish[] {
+  try {
+    if (fs.existsSync(MENU_FILE)) {
+      const content = fs.readFileSync(MENU_FILE, "utf8")
+      const parsed = JSON.parse(content)
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed
+      }
+    }
+  } catch (e) {
+    console.error("Error reading local menu file:", e)
+  }
+  return MENU_SEED
+}
+
+export function writeLocalMenu(dishes: MenuDish[]): void {
+  try {
+    const dir = path.dirname(MENU_FILE)
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true })
+    }
+    fs.writeFileSync(MENU_FILE, JSON.stringify(dishes, null, 2), "utf8")
+  } catch (e) {
+    console.error("Error writing local menu file:", e)
+  }
+}
 
 function fromRow(row: MenuItem): MenuDish {
   return {
@@ -23,15 +54,17 @@ function fromRow(row: MenuItem): MenuDish {
 }
 
 export async function getMenu(): Promise<MenuDish[]> {
-  if (!process.env.DATABASE_URL) return MENU_SEED
+  if (!process.env.DATABASE_URL) {
+    return readLocalMenu()
+  }
   try {
     const { db } = await import("@/lib/db")
     const { menuItems } = await import("@/lib/db/schema")
     const { asc } = await import("drizzle-orm")
     const rows = await db.select().from(menuItems).orderBy(asc(menuItems.sortOrder))
-    if (!rows.length) return MENU_SEED
+    if (!rows.length) return readLocalMenu()
     return rows.map(fromRow)
   } catch {
-    return MENU_SEED
+    return readLocalMenu()
   }
 }
