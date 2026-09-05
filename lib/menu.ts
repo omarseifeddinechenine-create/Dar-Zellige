@@ -68,3 +68,35 @@ export async function getMenu(): Promise<MenuDish[]> {
     return readLocalMenu()
   }
 }
+
+import { GALLERY } from "@/lib/data/menu"
+
+export type GalleryItem = {
+  src: string
+  alt: string
+  kind: "dish" | "interior" | "event"
+}
+
+export async function getGallery(): Promise<GalleryItem[]> {
+  const dishes = await getMenu()
+  const dishItems: GalleryItem[] = dishes
+    .filter((d) => Boolean(d.imageUrl))
+    .map((d) => ({
+      src: d.imageUrl!,
+      alt: `${d.namePt} — Azul Caffé & Brunch's Dz`,
+      kind: "dish" as const,
+    }))
+
+  const seen = new Set<string>()
+  const result: GalleryItem[] = []
+
+  // Add all dish items first so newly updated dishes show up prominently
+  for (const item of [...dishItems, ...GALLERY]) {
+    if (!seen.has(item.src)) {
+      seen.add(item.src)
+      result.push(item)
+    }
+  }
+
+  return result
+}

@@ -5,13 +5,27 @@ import { Sparkles, ArrowRight, MessageCircle, MapPin, Clock, ShieldCheck, HeartH
 import { FadeIn } from "@/components/fade-in"
 import { DishCard } from "@/components/dish-card"
 import { Zellige, ZelligeBand } from "@/components/zellige"
-import { GALLERY, type MenuDish } from "@/lib/data/menu"
+import { GALLERY, dishName, type MenuDish } from "@/lib/data/menu"
 import { site, whatsappOrderUrl, whatsappReserveUrl } from "@/lib/data/site"
 import { useLanguage } from "@/lib/i18n/language-provider"
 
 export function HomeView({ dishes, heroImage = "/gmaps/photo_06.jpeg" }: { dishes: MenuDish[]; heroImage?: string }) {
   const { t, lang } = useLanguage()
   const signatures = dishes.filter((d) => d.isSignature && d.available).slice(0, 4)
+
+  const dishGalleryItems = dishes
+    .filter((d) => Boolean(d.imageUrl))
+    .map((d) => ({
+      src: d.imageUrl!,
+      alt: `${dishName(d, lang)} — ${site.name}`,
+      kind: "dish" as const,
+    }))
+  const seenSrc = new Set<string>()
+  const homeGallery = [...dishGalleryItems, ...GALLERY].filter((item) => {
+    if (seenSrc.has(item.src)) return false
+    seenSrc.add(item.src)
+    return true
+  })
 
   return (
     <>
@@ -174,7 +188,7 @@ export function HomeView({ dishes, heroImage = "/gmaps/photo_06.jpeg" }: { dishe
         </FadeIn>
 
         <div className="mt-10 grid grid-cols-2 gap-3.5 md:grid-cols-4">
-          {GALLERY.slice(0, 6).map((img, i) => (
+          {homeGallery.slice(0, 8).map((img, i) => (
             <div
               key={img.src}
               className={i === 0 ? "col-span-2 row-span-2 overflow-hidden rounded-3xl shadow-sm" : "overflow-hidden rounded-3xl shadow-sm"}
